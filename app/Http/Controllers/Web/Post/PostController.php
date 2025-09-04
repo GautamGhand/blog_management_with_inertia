@@ -55,6 +55,7 @@ class PostController extends Controller
     }
     public function edit(Post $post)
     {
+        $this->authorize('update', $post);
         return Inertia::render('Posts/Edit', [
             'post' => $post
         ]);
