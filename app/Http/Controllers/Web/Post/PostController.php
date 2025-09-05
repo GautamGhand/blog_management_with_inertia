@@ -34,7 +34,7 @@ class PostController extends Controller
     }
     public function show($id)
     {
-        $post = Post::with(['comments','comments.user'])->where('id', $id)->firstOrFail();
+        $post = Post::with(['comments.user'])->where('id', $id)->firstOrFail();
         return Inertia::render('Posts/Show', [
             'brief_post' => $post
         ]);
