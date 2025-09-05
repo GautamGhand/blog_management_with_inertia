@@ -31,7 +31,7 @@ export default function Show() {
                     {brief_post.comments.length > 0 ? (
                         brief_post.comments.map((comment) => (
                             <div key={comment.id} className="border p-2 mb-2 rounded">
-                                <strong>{comment.comment}</strong>
+                                <strong>{comment.user.name}:{comment.comment}</strong>
                             </div>
                         ))
                     ) : (
